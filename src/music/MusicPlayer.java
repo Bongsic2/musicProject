@@ -12,9 +12,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class MusicPlayer {
-	public static String musicjsonpath = "C:\\Users\\이름\\eclipse-workspace\\music\\src\\music\\song_json_data.json";
-	Random random = new Random();
-	int n = random.nextInt(10);
+	public static String musicjsonpath = "C:\\Users\\이름\\eclipse-workspace\\LineNo5-Minhyeok\\src\\music\\song_json_data.json";
+	// Random random = new Random();
+	// int n = random.nextInt(10);
 	MusicInfo musicPath;
 	ArrayList<MusicInfo> listInfo = new ArrayList<>();
 	ArrayList<Integer> songRandomIntList = new ArrayList<Integer>();
@@ -45,11 +45,13 @@ public class MusicPlayer {
 		ArrayList<MusicInfo> musicInfo = new ArrayList<MusicInfo>();
 		for (int i = 0; i < array.size(); i++) {
 			JSONObject musicObject = (JSONObject) array.get(i);
-			String ip = musicObject.get("ip").toString();
+			String url = musicObject.get("url").toString();
 			String song = musicObject.get("song").toString();
 			String singer = musicObject.get("singer").toString();
 			String path = musicObject.get("path").toString();
-			musicInfo.add(new MusicInfo(ip, song, singer, path));
+			String songHint = musicObject.get("songHint").toString();
+			String singerHint = musicObject.get("singerHint").toString();
+			musicInfo.add(new MusicInfo(url, song, singer, path, songHint, singerHint));
 		}
 		return musicInfo;
 	}
@@ -72,7 +74,6 @@ public class MusicPlayer {
 			Clip c = AudioSystem.getClip();
 			c.open(b);
 			c.start();
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -1,24 +1,28 @@
 package music;
 
 public class MusicInfo {
-	String ip;
+	String url;
 	String song;
 	String singer;
 	String path;
+	String songHint;
+	String singerHint;
 
-	public MusicInfo(String ip, String song, String singer, String path) {
-		this.ip = ip;
+	public MusicInfo(String url, String song, String singer, String path, String songHint, String singerHint) {
+		this.url = url;
 		this.song = song;
 		this.singer = singer;
 		this.path = path;
+		this.songHint = songHint;
+		this.singerHint = singerHint;
 	}
 
-	public String getIp() {
-		return ip;
+	public String getUrl() {
+		return url;
 	}
 
-	public void setIp(String ip) {
-		this.ip = ip;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public String getSong() {
@@ -45,9 +49,26 @@ public class MusicInfo {
 		this.path = path;
 	}
 
+	public String getSongHint() {
+		return songHint;
+	}
+
+	public void setSongHint(String songHint) {
+		this.songHint = songHint;
+	}
+
+	public String getSingerHint() {
+		return singerHint;
+	}
+
+	public void setSingerHint(String singerHint) {
+		this.singerHint = singerHint;
+	}
+
 	@Override
 	public String toString() {
-		return ip + ", " + song + ", " + singer + ", " + path;
+		return url + ", " + song + ", " + singer + ", " + path + ", "
+				+ songHint + ", " + singerHint;
 	}
 
 }

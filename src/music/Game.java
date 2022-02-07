@@ -13,7 +13,8 @@ public class Game extends Thread {
 	}
 
 	public void gameStart() {
-		//System.out.println(musicInfo);
+		System.out.println(musicInfo.songHint);
+		System.out.println(musicInfo.singerHint);
 		while (true) {
 			String songName = sc.nextLine();
 			if (musicInfo.song.equalsIgnoreCase(songName)) {
